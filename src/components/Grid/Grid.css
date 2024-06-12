@@ -112,3 +112,13 @@
     margin-left: 4px;
     font-size: 30px;
 }
+
+@media (max-width:477px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        width: 250px;
+        margin-left: -0px;
+    }
+}
