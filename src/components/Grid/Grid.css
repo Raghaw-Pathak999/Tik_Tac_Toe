@@ -1,60 +1,78 @@
-.grid{
-    width: 400px;
-    height: 450px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: auto;   
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 350px;
+    margin: auto;
 }
 
-.turn{
-    color: #000000;
-    font-weight: bold;
+.turn {
     display: flex;
-    margin: auto;
+    color: #264653;
+    font-weight: bold;
     justify-content: center;
+    margin-top: 30px;
     cursor: pointer;
-    animation: bounce 0.5s infinite alternate;
-    background-color: #777777;
-    padding: 20px 0px ;
-    margin: 40px 400px 80px 400px;
+    margin-bottom: 50px;
+    font-size: 25px;
+    background-color: #e76f51;
+    padding: 20px 0px;
+    letter-spacing: 4px;
     border-radius: 40px;
+    font-family: cursive;
     box-shadow: 0 4px #ffffff;
+    animation: bounce 0.5s infinite alternate;
 }
 
-.turn-Winner{
-    color: #000000;
-    font-weight: bold;
+.turn-Winner {
     display: flex;
-    margin: auto;
+    color: #264653;
+    font-weight: bold;
     justify-content: center;
     cursor: pointer;
-    background-color: #6a6a6a;
-    padding: 20px 0px ;
-    margin: 40px 400px 80px 400px;
+    font-size: 25px;
+    background-color: #e76f51;
+    padding: 20px 0px;
+    font-family: cursive;
+    letter-spacing: 4px;
     border-radius: 40px;
     box-shadow: 0 4px #ffffff;
     animation: fade 1s ease-in-out infinite alternate;
 }
 
-.reset{
-    background-color: #6dffe7;
+.reset {
+    background-color: #f4a261;
+    border: 5px solid #264653;
     font-weight: bold;
     display: flex;
     margin: auto;
-    padding: 10px 20px ;
-    margin-top: -50px;
-    margin-bottom: 30px;
-    border-radius: 20px;
+    padding: 15px 40px;
+    margin-bottom: 20px;
+    color: #264653;
+    border-radius: 15px;
     outline: none;
-    border: none;
-    font-family: 'Lucida Sans';
+    font-family: cursive;
     font-size: 15px;
     cursor: pointer;
+    transition: all ease-in-out 0.4s;
 }
 
-.reset:hover{
+.player-O {
+    color: #ffffff;
+    margin-left: 10px;
+}
+
+.player-X {
+    color: #ffffff;
+    margin-left: 10px;
+}
+
+.reset:hover {
     scale: 1.1;
+    background-color: #264653;
+    border: 5px solid #f4a261;
+    color: #f4a261;
+    border-radius: 5px;
 }
 
 
@@ -62,6 +80,7 @@
     0% {
         transform: translateY(0);
     }
+
     100% {
         transform: translateY(-20px);
     }
@@ -71,7 +90,25 @@
     0% {
         opacity: 1;
     }
+
     100% {
         opacity: 0;
     }
+}
+
+.tryAgain {
+    color: white;
+    letter-spacing: 0;
+    margin-left: 4px;
+}
+
+.Draw {
+    font-size: 15px;
+}
+
+.winnerVal {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    margin-left: 4px;
+    font-size: 30px;
 }

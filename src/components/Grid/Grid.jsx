@@ -19,6 +19,8 @@ export function Grid({ nunbersOfCards }) {
 
         if (Win) {
             setWinner(Win);
+        } else if (!board.includes("")) {
+            setWinner("Draw");
         }
 
         setBoards([...board]);
@@ -35,7 +37,11 @@ export function Grid({ nunbersOfCards }) {
         <div className="grid-wapper">
             {winner && (
                 <>
-                    <h1 className="turn-Winner">Winner is: {winner} </h1>
+                    {winner === "Draw" ? (
+                        <p className="turn-Winner Draw">Game Over Match Draw <span className="tryAgain" onClick={reset}>Try_Again</span></p>
+                    ) : (
+                        <p className="turn-Winner">Winner is: <span className="winnerVal">{winner} </span></p>
+                    )}
                     <button className="reset" onClick={reset}>
                         Restart Game
                     </button>
@@ -43,12 +49,12 @@ export function Grid({ nunbersOfCards }) {
             )}
             {!winner && (
                 <h1 className="turn">
-                    Current Turn: {turn ? "O" : "X"}
+                    Current Turn: <span className={turn ? "player-O" : "player-X"}>{turn ? "O" : "X"}</span>
                 </h1>
             )}
             <div className="grid">
                 {board.map((elements, idx) => (
-                    <Card gameEnd={winner? true : false} key={idx} onPlay={play} player={elements} index={idx} />
+                    <Card gameEnd={winner ? true : false} key={idx} onPlay={play} player={elements} index={idx} />
                 ))}
             </div>
         </div>
